@@ -1,0 +1,226 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.contactForm {
+  margin: 0 auto;
+  display: block;
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 5px;
+  opacity: 75%;
+}
+
+.contactForm label {
+  display: block;
+  width: 380px;
+  padding: 5px;
+  margin-top: 30px;
+}
+
+.contactForm input {
+  display: block;
+  width: 380px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.contactForm textarea {
+  display: block;
+  width: 380px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+
+.contactForm button {
+  display: block;
+  margin: 30px auto;
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid royalblue;
+  color: royalblue;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.headingStyle {
+  color: red;
+  font-size: 2rem;
+  text-align: center;
+}
+.containerStyle {
+  background-image: url(../images/ocean-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segmentStyle {
+  border-radius: 20px;
+  padding: 4rem;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  flex: auto;
+}
+
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.contactCard {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  box-shadow: none;
+}
+
+.contactCard img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.contact-card .content {
+  margin-left: 10px;
+}
+
+.contact-card .header {
+  font-weight: bold;
+}
+
+.contact-card span {
+  color: #999999;
+}
+
+.contact-card .corner-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.contact-card .corner-icon i {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.search-container {
+   margin-bottom: 20px;
+}
+
+
+
+.main {
+  padding: 20px;
+}
+
+.contact-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-contact-link {
+  text-decoration: none;
+}
+
+/* .search-container {
+  margin-bottom: 20px;
+} */
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.contact-table td {
+  vertical-align: middle;
+}
+
+.contact-table .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.contact-table .header {
+  font-weight: bold;
+}
+
+/* .contact-table .corner-icon {
+  display: flex;
+} */
+
+.contact-table .corner-icon i {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+
