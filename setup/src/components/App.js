@@ -118,7 +118,7 @@ function App() {
             />
             <Route
               path="/edit/:id"
-              element={
+              elemen t={
                 <EditContact
                   updateContactHandler={updateContactHandler}
                   contacts={contacts}

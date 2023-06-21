@@ -1,9 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import ContactCard from "./ContactCard";
+// import ContactCard from "./ContactCard";
+import KendoReactGridView from "./KendoReactGridView";
+import TableGridView from "./TableGridView";
 
 const ContactList = (props) => {
   const inputEl = useRef("");
+  const [gridView, setGridView] = useState(false); // State to toggle between grid view types
+
   const contactsPerPage = 10;
 
   const deleteContactHandler = (id) => {
@@ -18,20 +22,18 @@ const ContactList = (props) => {
     props.setPage(pageNumber);
   };
 
-  const renderContactList = currentContacts.map((contact) => (
-    <tr key={contact.id}>
-      <ContactCard contact={contact} clickHandler={deleteContactHandler} />
-    </tr>
-  ));
+  const getSearchTerm = () => {
+    props.searchKeyWord(inputEl.current.value);
+  };
+
+  const toggleGridView = () => {
+    setGridView(!gridView);
+  };
 
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(props.searchResults.length / contactsPerPage); i++) {
     pageNumbers.push(i);
   }
-
-  const getSearchTerm = () => {
-    props.searchKeyWord(inputEl.current.value);
-  };
 
   return (
     <div className="main">
@@ -57,29 +59,23 @@ const ContactList = (props) => {
           </div>
         </div>
       </div>
-      <table className="contact-table">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {renderContactList.length > 0 ? (
-            renderContactList
-          ) : (
-            <tr>
-              <td colSpan="5">No Contacts Available</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      <div className="pagination" style={{marginTop:"20px"}}>
+      <div>
+        <label>
+          View:
+          <select value={gridView ? "kendo" : "normal"} onChange={toggleGridView}>
+            <option value="normal">Normal Grid View</option>
+            <option value="kendo">KendoReact Grid View</option>
+          </select>
+        </label>
+      </div>
+      {gridView ? (
+        <KendoReactGridView currentContacts={currentContacts}  deleteContactHandler={deleteContactHandler}  />
+      ) : (
+        <TableGridView currentContacts={currentContacts} deleteContactHandler={deleteContactHandler} />
+      )}
+      <div className="pagination" style={{ marginTop: "20px" }}>
         {pageNumbers.map((number) => (
-          <button  key={number} onClick={() => paginate(number)}>
+          <button key={number} onClick={() => paginate(number)}>
             {number}
           </button>
         ))}

@@ -213,14 +213,22 @@
   font-weight: bold;
 }
 
-/* .contact-table .corner-icon {
-  display: flex;
-} */
+
 
 .contact-table .corner-icon i {
   margin-left: 5px;
   cursor: pointer;
 }
+
+.avatar {
+  width: 20px;
+  padding: 5px;
+}
+
+.name {
+  padding: 5px;
+}
+
 
 
 
